@@ -98,7 +98,7 @@ public class WebViewCacheInterceptor implements WebViewRequestInterceptor {
     private void initHttpClient() {
 
         final Cache cache = new Cache(mCacheFile, mCacheSize);
-        OkHttpClient.Builder builder = new OkHttpClient.Builder()
+        OkHttpClient.Builder builder = new OkHttpClient.Builder().dns(mDns)
                 .cache(cache)
                 .connectTimeout(mConnectTimeout, TimeUnit.SECONDS)
                 .readTimeout(mReadTimeout, TimeUnit.SECONDS)
